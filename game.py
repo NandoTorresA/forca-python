@@ -8,6 +8,7 @@ def mask(answer: str) -> str:
     '''
     Essa função mascara a palavra resposta. Transformando os dígitos em asteriscos, com exceção do espaço e do hífen
     '''
+    
     masked_word = ''
     for char in answer:
         masked_word += '*' if char not in " -" else char
@@ -42,6 +43,7 @@ def check_answer() -> str:
     Essa função verifica os critérios da palavra resposta.
     Verifica se o campo está vazio, se tem mais de 50 caracteres, se tem menos de 4 caracteres ou contém números
     '''
+
     while True:
         answer_word = (input('Digite a palavra resposta: ')).lower().strip()
         if not answer_word:
@@ -58,14 +60,16 @@ def check_answer() -> str:
 
 def clear_screen():
     '''Essa função limpa o terminal'''
+
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def check_guess() -> str | None:
+def check_all_win_guess() -> str | None:
     '''
     Essa função verifica a validade do input da função all_win()
     Verificando se ela está vazia ou contém números
     '''
+
     while True:
         word = (input('Digite a palavra que deseja arriscar: ')).lower().strip()
         if not word:
@@ -80,11 +84,12 @@ def all_win():
     '''
     Essa função aciona a função para arriscar a palavra com um palpite.
     Mostra o aviso de risco no terminal e a instrução para voltar ao jogo normal
-    Retorna a o retorno da função check_guess()
+    Retorna a o retorno da função check_all_win_guess()
     '''
+
     clear_screen()
     print('Advertência: errar a palavra ocasiona a perda imediata do jogo!\nPara voltar, envie o campo vazio')
-    return check_guess()
+    return check_all_win_guess()
 
 
 def display(current_answer: str, tries: int, used_chars: list[str], forca_draw: list[str], max_tries: int):
@@ -93,6 +98,7 @@ def display(current_answer: str, tries: int, used_chars: list[str], forca_draw: 
     Exibe A instrução de digitar uma letra, a palavra atual, número de tentativas, letras utilizadas e a 
     instrução para acionar o all_win()
     '''
+
     clear_screen()
     print(f'''Digite apenas uma letra
 palavra atual: {current_answer}
@@ -104,6 +110,7 @@ Aperte 1 para arriscar a palavra completa''')
 
 def lose_display(answer: str):
     '''Limpa o terminal e exibe a tela de derrota e a palavra'''
+
     clear_screen()
     print(game_over_text)
     print(f'Você perdeu!\nA palavra era: {answer}')
@@ -111,6 +118,7 @@ def lose_display(answer: str):
 
 def win_display(answer: str):
     '''Limpa o terminal e exibe a tela de vitória e a resposta'''
+
     clear_screen()
     print(victory_text)
     print(f'Você venceu!\nA palavra era {answer}')
