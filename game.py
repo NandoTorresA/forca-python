@@ -100,12 +100,13 @@ def display(current_answer: str, tries: int, used_chars: list[str], forca_draw: 
     '''
 
     clear_screen()
-    print(f'''Digite apenas uma letra
-palavra atual: {current_answer}
+    print(f'''
 Tentativas falhas: {tries}/{max_tries}
-{forca_draw[tries]}
-Letras utilizadas: {', '.join(used_chars)}
-Aperte 1 para arriscar a palavra completa''')
+{forca_draw[tries]}\n
+palavra atual: {current_answer}
+Letras utilizadas: {'nenhuma' if not used_chars else ', '.join(used_chars)}
+Aperte 1 para arriscar a palavra completa
+Digite apenas uma letra''')
 
 
 def lose_display(answer: str):
