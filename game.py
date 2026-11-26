@@ -1,5 +1,5 @@
 import os
-from texts import game_over_text, victory_text
+from texts import game_over_text, victory_text, draws
 
 
 
@@ -123,73 +123,6 @@ def win_display(answer: str):
     clear_screen()
     print(victory_text)
     print(f'Você venceu!\nA palavra era {answer}')
-
-
-draws = [
-    r"""
-       +---+
-       |   |
-       |   
-       |   
-       |   
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |   
-       |   
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |   |
-       |   
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |  /|
-       |   
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |  /|\
-       |   
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |  /|\
-       |    \
-       |   
-    =========
-    """,
-    r"""
-       +---+
-       |   |
-       |   O
-       |  /|\
-       |  / \
-       |   
-    =========
-    """
-]
 
 
 def main():
